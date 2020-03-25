@@ -1,0 +1,7 @@
+{
+  "name": "RentACar",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

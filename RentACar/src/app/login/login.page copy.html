@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="loginForm" class="list-form">
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Introducir DNI
+      </ion-label>
+      <ion-input color="secondary" formControlName="dni"></ion-input>
+    </ion-item>
+ 
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline" item-start></ion-icon>
+        Introducir password
+      </ion-label>
+      <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+    </ion-item>
+  </form>
+
+  <div>
+    <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="login()" tappable>
+      <ion-icon name="log-in"></ion-icon>
+      Entrar
+    </ion-button>
+
+  </div>
+
+</ion-content>
