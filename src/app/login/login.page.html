@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" class="list-form">
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="mail" item-start></ion-icon>
+        Introducir DNI
+      </ion-label>
+      <ion-input color="secondary" formControlName="dni"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="loginForm.get('dni').touched && loginForm.get('dni').hasError('required')">
+      <ion-text color="warning">
+        DNI incorrecto
+      </ion-text>
+    </p>
+
+    <ion-item no-padding class="animated fadeInUp">
+      <ion-label position="floating">
+        <ion-icon name="lock-closed-outline" item-start></ion-icon>
+        Introducir password
+      </ion-label>
+      <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <p ion-text color="warning" class="text08" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
+      <ion-text color="warning">
+        Password incorrecto
+      </ion-text>
+      </p>
+      <p ion-text color="error" class="text08" *ngIf="errorMessage">
+        <ion-text color="error">
+          {{errorMessage}}
+        </ion-text>
+        </p>
+  </form>
+
+  <div>
+    <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="login()" tappable>
+      <ion-icon name="log-in"></ion-icon>
+      Entrar
+    </ion-button>
+
+  </div>
+</ion-content>
